@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Your Page Title</title>
+		<link href="entireframework.min.css" rel="stylesheet" type="text/css">
+		<style>
+			.hero {
+				background: #eee;
+				padding: 20px;
+				border-radius: 10px;
+				margin-top: 1em;
+			}
+
+			.hero h1 {
+				margin-top: 0;
+				margin-bottom: 0.3em;
+			}
+
+			.c4 {
+				padding: 10px;
+				box-sizing: border-box;
+			}
+
+			.c4 h3 {
+				margin-top: 0;
+			}
+
+			.c4 a {
+				margin-top: 10px;
+				display: inline-block;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="nav" tabindex="-1" onclick="this.focus()">
+			<div class="container">
+				<a class="pagename current" href="#">Nginx on Gadget</a>
+			</div>
+		</nav>
+		<button class="btn-close btn btn-sm">×</button>
+		<div class="container">
+			<div class="hero">
+				<h1>Time to get hacking!</h1>
+			    <div class="row">
+			        <div class="col c4"></div>
+			        <div class="col c4"><img src="cat.gif" alt="Hacking on Gadget" height="300" width="300"></div>
+			        <div class="col c4"></div>
+		        </div>
+			</div>
+			<div class="row">
+                <div class="col c4"><h3>This page uses mincss</h3>It's an awesome tiny web 'framework'.<br><a href="https://mincss.com/" class="btn btn-sm btn-a">Check out mincss</a></div>
+                <div class="col c4"><h3>It's running on Gadget</h3>An awesome tiny board to build your product on!<br><a href="https://getchip.com/pages/chippro" class="btn btn-sm btn-b">Get a CHIP</a></div>
+                <div class="col c4"><h3>The web server is nginx</h3>Nginx powers websites large and small.<br><a href="https://nginx.org/en/" class="btn btn-sm btn-c">Read about nginx</a></div>
+            </div>
+		</div>
+	</body>
+</html>
