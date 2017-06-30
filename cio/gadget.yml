@@ -1,0 +1,18 @@
+spec: "0.0"
+name: cio
+uuid: 47dfbf27-62f4-40ca-b9cc-c649251d8eff
+type: docker
+onboot:
+services:
+- name: cio
+  uuid: a9bd554c-d34a-405e-b6fd-2e242f809adf
+  image: computermouth/cio
+  directory:
+  net: ""
+  pid: ""
+  readonly: false
+  command: []
+  binds: ['/sys:/sys']
+  capabilities: ['SYS_RAWIO']
+  devices: []
+
