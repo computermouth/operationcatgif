@@ -1,11 +1,10 @@
 spec: "0.0"
-name: cio
-uuid: 47dfbf27-62f4-40ca-b9cc-c649251d8eff
+name: goio
+uuid: fed45745-94d7-4648-899d-d934ad64c7d9
 type: docker
 onboot:
-services:
-- name: cio
-  uuid: a9bd554c-d34a-405e-b6fd-2e242f809adf
+- name: goio
+  uuid: c75c3f5b-933e-44eb-99ac-b62c80e0e854
   image: 
   directory: "./"
   net: ""
@@ -15,4 +14,4 @@ services:
   binds: ['/sys:/sys']
   capabilities: ['SYS_RAWIO']
   devices: []
-
+services: []

@@ -93,7 +93,7 @@ int main(void){
 	
 	fprintf(stdout, "%s direction set to 'out'\n", CHIPPRO_GPIO_P_NO);
 	
-	char value[] = "0";
+	char value[] = "1";
 	
 	while( 1 ){
 		// open the pin file
