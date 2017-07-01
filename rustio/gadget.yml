@@ -1,0 +1,17 @@
+spec: "0.0"
+name: rustio
+uuid: 691afc54-18da-4cd4-a1d6-3285a99f3236
+type: docker
+onboot:
+- name: rustio
+  uuid: c82c668b-9479-4b5a-9e3c-f17c66ac8423
+  image: 
+  directory: "./"
+  net: ""
+  pid: ""
+  readonly: false
+  command: [""]
+  binds: ['/sys:/sys']
+  capabilities: ['SYS_RAWIO']
+  devices: []
+services: []
