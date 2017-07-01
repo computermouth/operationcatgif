@@ -1,5 +1,6 @@
 FROM armhf/node
 
-ADD 
+ADD index.js /index.js
+ADD package.json /package.json
 
-CMD ["node", "/somefile"]
+CMD ["node", "/index.js"]

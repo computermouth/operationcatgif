@@ -1,0 +1,17 @@
+spec: "0.0"
+name: nodeio
+uuid: fa097a9c-c139-4aa7-9098-0baae0dc3c15
+type: docker
+onboot:
+services:
+- name: nodeio
+  uuid: 52087168-ae66-4398-a235-ba49ec2407b6
+  image: 
+  directory: "./"
+  net: ""
+  pid: ""
+  readonly: false
+  command: []
+  binds: ['/sys:/sys']
+  capabilities: ['SYS_RAWIO']
+  devices: []
