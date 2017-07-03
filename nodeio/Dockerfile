@@ -1,6 +1,19 @@
-FROM armhf/node
+FROM scratch
 
-ADD index.js /index.js
-ADD package.json /package.json
+ENV nodever="v6.11.0"
+ADD https://nodejs.org/dist/${nodever}/node-${nodever}-linux-armv7l.tar.xz /
 
-CMD ["node", "/index.js"]
+##########################################
+
+FROM scratch
+ENV nodever="v6.11.0"
+COPY --from=0 /node-${nodever}-linux-armv7l/bin/node     .
+#COPY --from=0 /node-${nodever}-linux-armv7l/bin     ./bin
+#COPY --from=0 /node-${nodever}-linux-armv7l/include ./include
+#COPY --from=0 /node-${nodever}-linux-armv7l/lib     ./lib
+#COPY --from=0 /node-${nodever}-linux-armv7l/share   ./share
+
+COPY index.js .
+COPY package.json .
+
+CMD ["./node", "./index.js"]
