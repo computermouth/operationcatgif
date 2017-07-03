@@ -12,6 +12,6 @@ onboot:
   readonly: false
   command: []
   binds: ['/sys:/sys']
-  capabilities: ['SYS_RAWIO']
+  capabilities: []
   devices: []
 services: []
