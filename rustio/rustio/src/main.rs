@@ -3,6 +3,7 @@ use std::path::Path;
 use std::io::Write;
 use std::process;
 use std::fs::File;
+use std::{thread, time};
 
 static CHIPPRO_GPIO_ROOT: &'static str = "/sys/class/gpio";
 static CHIPPRO_GPIO_EXPO: &'static str = "/sys/class/gpio/export";
@@ -26,10 +27,9 @@ fn main() {
 		let _  = write!(&mut std::io::stdout(),
 			"{} was found previously exported\n", 
 			CHIPPRO_GPIO_P_D0);
-		process::exit(1);
 	} else {
 		// open the export file
-		let mut file = match File::open(&CHIPPRO_GPIO_EXPO) {
+		let mut file = match File::create(&CHIPPRO_GPIO_EXPO) {
 			Ok(file) => file,
 			Err(_) => panic!( "{} does not exist, or couldn't be accessed\n", 
 				CHIPPRO_GPIO_EXPO),
@@ -52,7 +52,7 @@ fn main() {
 		process::exit(1);
 	} else {
 		// open the direction file
-		let mut file = match File::open(&CHIPPRO_GPIO_DIRE) {
+		let mut file = match File::create(&CHIPPRO_GPIO_DIRE) {
 			Ok(file) => file,
 			Err(_) => panic!( "{} does not exist, or couldn't be accessed\n", 
 				CHIPPRO_GPIO_DIRE),
@@ -68,6 +68,7 @@ fn main() {
 	}
 	
 	let mut value = "1";
+	let delay = time::Duration::from_millis(1000);
 	
 	loop {
 		
@@ -79,7 +80,7 @@ fn main() {
 			process::exit(1);
 		} else {
 			// open the direction file
-			let mut file = match File::open(&CHIPPRO_GPIO_VALU) {
+			let mut file = match File::create(&CHIPPRO_GPIO_VALU) {
 				Ok(file) => file,
 				Err(_) => panic!( "{} does not exist, or couldn't be accessed\n", 
 					CHIPPRO_GPIO_VALU),
@@ -93,6 +94,8 @@ fn main() {
 					value),
 			}
 		}
+		
+		thread::sleep(delay);
 		
 		if value == "1" {
 			value = "0"

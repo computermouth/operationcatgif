@@ -8,7 +8,6 @@ const CHIPPRO_GPIO_P_NO = '132'
 const CHIPPRO_GPIO_P_D0 = '/sys/class/gpio/gpio132'
 const CHIPPRO_GPIO_DIRE = '/sys/class/gpio/gpio132/direction'
 const CHIPPRO_GPIO_VALU = '/sys/class/gpio/gpio132/value'
-const FILE_NOT_FOUND_CODE = 'ENOENT'
 
 // check if gpio root exists
 fs.readdir(CHIPPRO_GPIO_ROOT, (err, files) => {
@@ -35,7 +34,6 @@ if (fs.existsSync(CHIPPRO_GPIO_DIRE)) {
 } else {
   logAndExit(`${CHIPPRO_GPIO_DIRE} does not exist`)
 }
-
 
 let value = 1
 setInterval(() => {
